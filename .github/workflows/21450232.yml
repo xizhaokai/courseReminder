@@ -1,9 +1,9 @@
-name: class21345232
+name: 21450232
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '45 23 * * 2'
+    - cron: '50 23 * * 2'
 
 jobs:
   build:
@@ -24,5 +24,5 @@ jobs:
       env:
         token: ${{ secrets.token }}
       run: |
-        python push.py class213 8:10计算机应用基础 张倩（信校）
+        python push.py 214 8:10学习通签到 腾讯会议上课 高等数学 朱丽娜
     

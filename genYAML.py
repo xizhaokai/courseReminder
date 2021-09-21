@@ -37,7 +37,7 @@ def getCourseInfo():
                 if len(course) == 0:
                     continue
                 hour, minute = timeList[i].split(':')
-                minutePure = int(hour) * 60 + int(minute) - 25 # 提前25分钟推送
+                minutePure = int(hour) * 60 + int(minute) - 20 # 提前20分钟推送
                 hour, minute = int(minutePure / 60), int(minutePure % 60)
                 hour = 16 + hour if hour - 8 < 0 else hour - 8
                 cronTime = '{} {} * * {}'.format(minute, hour, weekDay+1)
