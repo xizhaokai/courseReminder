@@ -1,9 +1,9 @@
-name: class21435232
+name: class21445234
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '35 23 * * 2'
+    - cron: '45 23 * * 4'
 
 jobs:
   build:
@@ -24,5 +24,5 @@ jobs:
       env:
         token: ${{ secrets.token }}
       run: |
-        python push.py class214 8:00高等数学 朱丽娜
+        python push.py class214 8:10思想道德与法治 杨娟
     
