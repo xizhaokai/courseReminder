@@ -20,6 +20,8 @@ jobs:
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Push Information
+      env:
+        token: ${{ secrets.token }}
       run: |
         python push.py classCode informationContent
     
