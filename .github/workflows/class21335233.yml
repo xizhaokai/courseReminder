@@ -2,7 +2,7 @@ name: class21335233
 
 on:
   schedule:
-    - cron: '0 35 23 * * 3 *'
+    - cron: '35 23 * * 3'
 
 jobs:
   build:
