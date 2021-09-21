@@ -2,9 +2,9 @@ import sys
 import os
 import requests
 
+classCode = sys.argv[1]
+information = ' '.join(sys.argv[2:])
 token = os.environ['token']
-classCode = sys.argv[0]
-information = sys.argv[1]
 
 url = 'http://pushplus.hxtrip.com/send'
 params = {

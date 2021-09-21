@@ -1,8 +1,8 @@
-name: workflowName
+name: class213565
 
 on:
   schedule:
-    - cron: 'cronTimeContent'
+    - cron: '0 5 6 * * 5 *'
 
 jobs:
   build:
@@ -21,5 +21,5 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Push Information
       run: |
-        python push.py classCode informationContent
+        python push.py class213 14:30大学生心理健康 和梦雪
     
