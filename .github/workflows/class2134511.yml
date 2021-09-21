@@ -1,6 +1,7 @@
 name: class2134511
 
 on:
+  workflow_dispatch:
   schedule:
     - cron: '45 1 * * 1'
 
