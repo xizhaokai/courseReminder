@@ -58,7 +58,7 @@ def genWorkflows(dataJson):
                 cronTimeList = cronTime.split(' ')
                 workflowName = '{}{}{}{}'.format(classCode, cronTimeList[1], cronTimeList[2], cronTimeList[5])
                 temp = temp.replace('workflowName', workflowName)
-                with open(os.path.join('./workflows', workflowName + '.yml'), 'w+', encoding='utf-8') as f:
+                with open(os.path.join('./.github/workflows', workflowName + '.yml'), 'w+', encoding='utf-8') as f:
                     f.write(temp)
         
 data = getCourseInfo()
