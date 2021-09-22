@@ -1,9 +1,9 @@
-name: 214025
+name: 214865
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 2 * * 5'
+    - cron: '8 6 * * 5'
 
 jobs:
   build:
@@ -24,5 +24,5 @@ jobs:
       env:
         token: ${{ secrets.token }}
       run: |
-        python push.py 214 10:20学习通签到 腾讯会议上课 计算机应用基础 李强
+        python push.py 214 14:30知到上课 $ C语言程序设计 李遥
     

@@ -20,7 +20,7 @@ def getCourseInfo():
                 codeList[l[0]] = l[1]
 
     # 获取课程表数据
-    workBook = xlrd.open_workbook('课表.xlsx')
+    workBook = xlrd.open_workbook('course.xls')
     dataJson = dict()
     for sheetName in workBook.sheet_names():
         code = codeList[sheetName]
@@ -37,10 +37,16 @@ def getCourseInfo():
                 if len(course) == 0:
                     continue
                 hour, minute = timeList[i].split(':')
-                minutePure = int(hour) * 60 + int(minute) - 20 # 提前20分钟推送
+                minutePure = int(hour) * 60 + int(minute) - 22 # 提前22分钟推送
                 hour, minute = int(minutePure / 60), int(minutePure % 60)
-                hour = 16 + hour if hour - 8 < 0 else hour - 8
-                cronTime = '{} {} * * {}'.format(minute, hour, weekDay+1)
+                realWeekDay = i+1
+                if(hour - 8 <0):
+                    hour = 16+hour
+                    realWeekDay = i
+                else:
+                    hour = hour - 8
+                # hour = 16 + hour if hour - 8 < 0 else hour - 8 #<---这个是干啥的？
+                cronTime = '{} {} * * {}'.format(minute, hour, realWeekDay)
                 dataJson[code][cronTime] = timeList[i] + course
     return dataJson
 
